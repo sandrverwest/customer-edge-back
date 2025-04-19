@@ -12,7 +12,7 @@ const handleError = (res, error) => {
 
 const addUser = (req, res) => {
     User
-    .findOne( { email: req.body.email}, { first_name:1, last_name: 1, email: 1 } )
+    .findOne( { username: req.body.username}, { firstName:1, lastName: 1, username: 1 } )
     .then((result) => {
             if(result) {
             res.

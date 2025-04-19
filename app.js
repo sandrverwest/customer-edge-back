@@ -25,7 +25,7 @@ const router = require('./routes'); //imports index.js from routes folder
 // app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
-app.use('/api/', express.static('files'))
+app.use('/api/', express.static('files'));
 app.use(router);
 
 socketRooms(io, app); /// web socket rooms

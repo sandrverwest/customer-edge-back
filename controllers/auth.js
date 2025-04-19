@@ -20,8 +20,8 @@ const logIn = (req, res) => {
                 if (isVerified) {                   
                     const payload = {
                         email: result.email,
-                        first_name: result.first_name,
-                        last_name: result.last_name
+                        firstName: result.firstName,
+                        lastName: result.lastName
                     }
                     const jwtSecretKey = process.env.JWT_SECRET_KEY;
                     const token = jwt.sign(payload, jwtSecretKey, {

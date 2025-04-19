@@ -27,7 +27,7 @@ const carrierSchema = new Schema({
     phone: String,
     fax: String,
     address: address,
-    division: [String],
+    divisions: [String],
     operations: [String],
     insuranceRates: {
         basePackage: Number,

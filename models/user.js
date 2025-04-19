@@ -4,11 +4,19 @@ const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    first_name: {
+    customerId: {
         type: String,
         required: true
     },
-    last_name: {
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    username: {
         type: String,
         required: true
     },
@@ -25,6 +33,7 @@ const userSchema = new Schema({
     extension: String,
     department: String,
     position: String,
+    role: String,
     isDeactivated: {
         type: Boolean,
         required: true,

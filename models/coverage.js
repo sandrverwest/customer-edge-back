@@ -2,15 +2,22 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const coverage = new Schema({
-    coverageName: String,
+const coverageLineSchema = new Schema({
+    coverageLineName: String,
+    coverageLineCarrier: String,
+    coverageLineExpirationDate: Date,
+    coverageLinePolicyNumber: String,
+});
+
+const coverageSchema = new Schema({
     producerID: String,
     carrierID: String,
-    notes: String,
-    expiration: Date,
+    coverageLines: [coverageLineSchema],
+    isPrimary: Boolean,
+    primaryPolicyType: String,
+    notes: String
 }, { timestamps: true, versionKey: false });
 
+const Coverage = mongoose.model('Coverage', coverageSchema);
 
-const Coverage = mongoose.model('Coverage', coverage);
-
-module.exports = Coverage
+module.exports = Coverage;
